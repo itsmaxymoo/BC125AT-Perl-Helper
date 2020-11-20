@@ -3,9 +3,8 @@
 A tool to convert [bc125at-perl](http://www.rikus.org/bc125at-perl)'s output to CSV and back for easy editing.
 
 # Installation
-1. *BC125AT-Perl Helper* requires Python 3.
-2. Download `bc125at-perl-helper.py`. You can run this file directly, or
-3. Run `wget https://raw.githubusercontent.com/itsmaxymoo/BC125AT-Perl-Helper/master/bc125at-perl-helper.py && sudo cp bc125at-perl-helper.py /usr/bin/bc125at-perl-helper && sudo chmod +x /usr/bin/bc125at-perl-helper` to "install" this program.
+Requires Python 3.6.  
+`pip install bc125at-perl-helper`
 
 # Features
 * Converts `bc125at-perl`'s hard-to-read output to CSV (and back) for use in any spreadsheet editor.

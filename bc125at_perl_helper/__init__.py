@@ -13,14 +13,33 @@ import random
 # Constants
 NAME = "BC125AT-Perl Helper"
 CMD = "bc125at-perl-helper"
-VERSION = "1.1"
+VERSION = "1.2.2"
 AUTHOR = "Max Loiacono"
 
 OPERATION_TO_CSV = 0
 OPERATION_TO_TXT = 1
 
-# Basics
-print(NAME + "\nVersion " + VERSION + " by " + AUTHOR + "\n")
+
+def main():
+	# Basics
+	print(NAME + "\nVersion " + VERSION + " by " + AUTHOR + "\n")
+
+	# CliArgs handler
+	if len(sys.argv) < 2:
+		showHelp()
+	elif sys.argv[1] == "c" and len(sys.argv) == 4:
+		convert(sys.argv[2], sys.argv[3])
+	elif sys.argv[1] == "r" and len(sys.argv) == 3:
+		scannerRead(sys.argv[2])
+	elif sys.argv[1] == "w" and len(sys.argv) == 3:
+		scannerWrite(sys.argv[2])
+	elif sys.argv[1] == "clean" and len(sys.argv) == 3:
+		cleanCSV(sys.argv[2])
+	else:
+		showHelp()
+
+	exit(0)
+
 
 def showHelp():
 	print("Usage:\n\t" + CMD + " <command> <1?> <2?>\n")
@@ -216,20 +235,6 @@ def cleanCSV(inFile):
 
 	fc = list2csv(fc)
 	writeOut(inFile, fc)
-	
 
-# CliArgs handler
-if len(sys.argv) < 2:
-	showHelp()
-elif sys.argv[1] == "c" and len(sys.argv) == 4:
-	convert(sys.argv[2], sys.argv[3])
-elif sys.argv[1] == "r" and len(sys.argv) == 3:
-	scannerRead(sys.argv[2])
-elif sys.argv[1] == "w" and len(sys.argv) == 3:
-	scannerWrite(sys.argv[2])
-elif sys.argv[1] == "clean" and len(sys.argv) == 3:
-	cleanCSV(sys.argv[2])
-else:
-	showHelp()
 
-exit(0)
+main()
