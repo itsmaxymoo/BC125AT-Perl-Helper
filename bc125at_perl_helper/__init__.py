@@ -10,7 +10,7 @@ import random
 # Constants
 PROGRAM_NAME = "BC125AT-Perl Helper"
 PROGRAM_CMD = "bc125at-perl-helper"
-PROGRAM_VERSION = "1.2.3"
+PROGRAM_VERSION = "1.2.4"
 PROGRAM_AUTHOR = "Max Loiacono"
 PROGRAM_URL = "https://github.com/itsmaxymoo/bc125at-perl-helper"
 
@@ -137,6 +137,7 @@ def _list2csv(in_list):
 def _csv2list(in_data):
 	# Convert CSV to TXT
 	in_data = in_data.replace("Name,Frequency,Modulation,CTCSS Tone,Delay,Locked Out,Priority\n", "")
+	in_data = in_data.replace("Name,Frequency,Modulation,\"CTCSS Tone\",Delay,\"Locked Out\",Priority\n", "")
 	# Read CSV
 	in_data = csv.reader(io.StringIO(in_data))
 	in_data = list(in_data)
