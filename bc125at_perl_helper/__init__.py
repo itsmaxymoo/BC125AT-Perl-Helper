@@ -6,11 +6,12 @@ import csv
 import subprocess
 import string
 import random
+import os
 
 # Constants
 PROGRAM_NAME = "BC125AT-Perl Helper"
 PROGRAM_CMD = "bc125at-perl-helper"
-PROGRAM_VERSION = "1.2.4"
+PROGRAM_VERSION = "1.2.5"
 PROGRAM_AUTHOR = "Max Loiacono"
 PROGRAM_URL = "https://github.com/itsmaxymoo/bc125at-perl-helper"
 
@@ -20,7 +21,13 @@ __OPERATION_TO_TXT = 1
 
 def _main():
 	# Basics
-	print(PROGRAM_NAME + "\nVersion " + PROGRAM_VERSION + " by " + PROGRAM_AUTHOR + "\n")
+	columns, lines = os.get_terminal_size()
+	print("!" * columns)
+	print("THIS PROGRAM IS DISCONTINUED!")
+	print("Please use bc125py, my full-fat replacement for bc125at-perl")
+	print("Get it at: https://github.com/itsmaxymoo/bc125py")
+	print("!" * columns)
+	print()
 
 	# CliArgs handler
 	if len(sys.argv) < 2:
